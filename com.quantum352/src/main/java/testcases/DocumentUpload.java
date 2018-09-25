@@ -20,18 +20,18 @@ public class DocumentUpload extends WrapperClass {
 
 	@Test
 	public void documentcheck() throws InterruptedException, IOException {
+		// reading data from Excel
 		exceldata();
 		int datacount = al.size();
-
+		//calling the Login method
 		login();
 		
-		//Set<String> windowHandles = driver.getWindowHandles();
-
 		clickelementbyid("main-search-box");
 		typelementbyidandmouseclick("main-search-box", "2018073199");
 		clickelementbyxpath("//span[text()='Documents']");
 		String productname = null;
 
+		// starting the iteration
 		for (int k = 0; k <= datacount - 1; k++) {
 
 			System.out.println("New Iteration starts = k : " + k);
